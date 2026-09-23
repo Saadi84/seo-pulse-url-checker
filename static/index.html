@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO Pulse v2 · Local URL Checker</title>
+<style>
+:root{--bg:#0b1020;--panel:#121b2e;--panel2:#182338;--line:#29374c;--text:#eaf1fc;--muted:#91a4c0;--blue:#69a6ff;--teal:#45e0ba;--red:#ff8392;--amber:#ffc879;--shadow:0 20px 55px rgba(0,0,0,.16)}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 0%,#15284b 0,transparent 35%),var(--bg);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,Segoe UI,Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}.shell{max-width:1190px;padding:32px 26px 90px;margin:auto}header,.header-right,.brand,.section-title,.toolbar,.stats,.meta,.btn-row,.progress-top{display:flex;align-items:center}header{justify-content:space-between;gap:15px;margin-bottom:40px}.brand{gap:12px}.mark{height:44px;width:44px;border-radius:14px;background:linear-gradient(145deg,#60acff,#54e4bd);display:grid;place-items:center;color:#08223e;font-weight:900;font-size:25px;box-shadow:0 10px 30px #39bce72b}.brand strong{font-size:19px;letter-spacing:-.6px}.brand small{display:block;color:var(--muted);font-size:12px;margin-top:-4px}.header-right{gap:10px}.pill{border:1px solid #2d766a;background:#12372f;color:#83f2d5;padding:7px 12px;border-radius:50px;font-size:12px;font-weight:700}.pill:before{content:"";display:inline-block;height:6px;width:6px;background:var(--teal);border-radius:100%;margin-right:7px;vertical-align:middle}.tag{color:var(--muted);font-size:12px}.hero{display:grid;grid-template-columns:1.18fr .82fr;gap:20px;align-items:stretch}.eyebrow{color:var(--teal);text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:800;margin:0 0 8px}h1{font-size:clamp(31px,4.5vw,49px);line-height:1.12;letter-spacing:-1.7px;margin:0 0 13px;max-width:690px}.description{color:var(--muted);margin:0;max-width:590px;font-size:15px}.hero-copy{padding:13px 0 8px}.facts{display:flex;flex-wrap:wrap;gap:11px;margin-top:25px}.fact{border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:#b9cae2;font-size:12px}.fact b{color:var(--teal)}.panel{border:1px solid var(--line);background:linear-gradient(145deg,#162238,#10192a);border-radius:19px;box-shadow:var(--shadow)}.upload{padding:21px}.section-title{justify-content:space-between;margin-bottom:13px}.section-title h2{font-size:17px;margin:0;letter-spacing:-.3px}.step{color:var(--muted);font-size:12px}.drop{border:1.5px dashed #46617d;border-radius:14px;min-height:146px;background:#0e192c;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:7px;padding:15px;transition:background .2s,border-color .2s;cursor:pointer}.drop:hover,.drop.drag{background:#172e47;border-color:#62b4ff}.drop svg{width:31px;height:31px;color:var(--blue)}.drop strong{font-size:14px}.drop span{font-size:12px;color:var(--muted)}.drop .filename{color:var(--teal);overflow-wrap:anywhere;max-width:100%}input[type=file]{display:none}.btn{border:0;border-radius:10px;padding:11px 15px;font-weight:750;font-size:13px;white-space:nowrap}.primary{background:linear-gradient(100deg,#68a9ff,#54dfc1);color:#07223d}.primary:hover:not(:disabled){filter:brightness(1.09)}.outline{border:1px solid #3c526d;background:#17253b;color:#c6d9f3}.outline:hover:not(:disabled){background:#213751}.upload .btn{margin-top:13px;width:100%}.upload .hint{margin:9px 0 0;color:var(--muted);font-size:11px;text-align:center}.alert{display:none;color:#ffbdc8;background:#3c2333;border:1px solid #794055;padding:11px 14px;border-radius:10px;margin-top:16px;font-size:13px}.alert.show{display:block}.stats{margin-top:26px;gap:15px}.stat{flex:1;min-width:0;padding:18px 20px}.stat .label{font-size:12px;color:var(--muted);margin-bottom:8px}.stat .value{font-size:32px;font-weight:800;letter-spacing:-1.4px;line-height:1.15}.stat .bottom{font-size:11px;color:var(--muted);margin-top:7px}.stat .value.green{color:var(--teal)}.stat .value.red{color:var(--red)}.stat .value.gold{color:var(--amber)}.progress-panel{margin-top:19px;padding:19px 21px}.progress-top{justify-content:space-between;gap:15px;margin-bottom:11px}.progress-top strong{font-size:14px}.progress-top span{color:var(--muted);font-size:12px}.progress-track{background:#243149;height:9px;overflow:hidden;border-radius:99px}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#65a8ff,#51e3c0);border-radius:99px;transition:width .35s}.meta{justify-content:space-between;gap:10px;margin-top:12px;color:var(--muted);font-size:12px}.results{margin-top:19px;padding:20px}.toolbar{justify-content:space-between;gap:13px;flex-wrap:wrap;margin:15px 0}.filters{display:flex;gap:6px;flex-wrap:wrap}.filter{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12px;font-weight:650}.filter.active{color:#081d32;background:#78b7fb;border-color:#78b7fb}.search{background:#0f1a2d;border:1px solid var(--line);border-radius:9px;padding:9px 12px;outline:none;color:var(--text);min-width:218px;max-width:100%}.search:focus{border-color:var(--blue)}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}th{font-size:11px;color:var(--muted);background:#172338;font-weight:700;padding:11px 13px;white-space:nowrap}td{padding:12px 13px;border-top:1px solid #253348;vertical-align:middle}td a{color:#c6ddff;text-decoration:none;overflow-wrap:anywhere}td a:hover{text-decoration:underline}td.url{max-width:370px;min-width:205px;overflow-wrap:anywhere}td.final{max-width:260px;min-width:120px;overflow-wrap:anywhere;color:var(--muted)}td.status{white-space:nowrap}.status-chip{border-radius:7px;padding:4px 7px;display:inline-block;font-weight:750}.working{color:#74edcb;background:#1a403d}.not_found{color:#ffa5af;background:#432737}.needs_review{color:#ffcc85;background:#433524}.empty{text-align:center;padding:36px 18px;color:var(--muted)}.table-note{color:var(--muted);font-size:11px;margin-top:11px}.download{margin-top:18px;padding:19px 21px}.btn-row{gap:9px;flex-wrap:wrap;margin-top:13px}.download .outline{font-size:12px}.download-note{color:var(--muted);font-size:12px;margin-top:10px}.footer{color:#68809e;font-size:11px;margin-top:25px;text-align:center}button:focus-visible,label:focus-visible{outline:2px solid var(--teal);outline-offset:3px}@media(max-width:780px){.shell{padding:21px 14px 60px}header{margin-bottom:24px}.hero{grid-template-columns:1fr}.hero-copy{padding:0 0 10px}.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{padding:15px}.stat .value{font-size:27px}.header-right .tag{display:none}}@media(max-width:390px){.stats{grid-template-columns:1fr 1fr}.search{width:100%}.stat .value{font-size:23px}}
+.retry-panel{margin-top:19px;padding:19px 21px;border-color:#527e8e;background:linear-gradient(135deg,#142b42,#111e30)}.retry-grid{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.retry-grid>div{flex:1;min-width:220px}.retry-copy{color:var(--muted);font-size:13px;margin:7px 0 0;max-width:760px}.retry-button{background:#1c3e4b;color:#9ff5e0;border:1px solid #4d9c8c;min-height:44px}.retry-button:hover:not(:disabled){background:#295764}.retry-note{margin:10px 0 0;color:#bad2e6;font-size:12px}.banner{display:none;margin-top:12px;padding:11px 13px;border-radius:10px;background:#233447;border:1px solid #58718d;color:#d7eafa;font-size:12px}.banner.show{display:block}@media(max-width:700px){.retry-button{width:100%}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header><div class="brand"><div class="mark">↗</div><div><strong>SEO Pulse</strong><small>URL health checker</small></div></div><div class="header-right"><span class="tag">100% local · no paid API</span><span class="pill">Local dashboard</span></div></header>
+<section class="hero"><div class="hero-copy"><p class="eyebrow">Your SEO workflow, automated</p><h1>Check hundreds of URLs. <span style="color:var(--teal)">In one click.</span></h1><p class="description">Upload a CSV and let SEO Pulse check your page URLs automatically. See the HTTP status of each page and export clean reports for your team.</p><div class="facts"><span class="fact"><b>✓</b> Working pages</span><span class="fact"><b>✓</b> 404 / 410 pages</span><span class="fact"><b>✓</b> Other errors & redirects</span></div></div>
+<div class="panel upload"><div class="section-title"><h2>Start a new scan</h2><span class="step">01 / UPLOAD</span></div><label for="csvfile" class="drop" id="drop" tabindex="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V3m0 0L7 8m5-5 5 5M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg><strong id="drop-title">Click or drag a CSV file here</strong><span id="drop-subtitle">One URL per row · column named “url”</span><span class="filename" id="filename"></span></label><input type="file" id="csvfile" accept=".csv,text/csv,text/plain"><button class="btn primary" id="start" disabled>Choose a CSV to start →</button><p class="hint">No login · Up to 5,000 URLs / 2 MB per scan</p></div></section>
+<section class="panel retry-panel" aria-label="Retry needs review URLs"><div class="retry-grid"><div><div class="section-title" style="margin-bottom:5px"><h2>↻ Retry Needs Review</h2><span class="step">02 / RETRY</span></div><p class="retry-copy">Upload your earlier <b>all_results.csv</b> above, then retry ONLY its Needs Review URLs. Or retry the current scan's unresolved URLs after it finishes. Working and 404 records are preserved.</p></div><button class="btn retry-button" id="retry" disabled>↻ Retry Needs Review</button></div><p class="retry-note" id="retry-note">Select a previous all_results.csv, or complete a scan with Needs Review URLs.</p></section>
+<div class="alert" id="alert" role="alert"></div><div class="banner" id="banner" role="status"></div>
+<section class="stats" aria-label="Scan statistics"><div class="panel stat"><div class="label">Total URLs</div><div class="value" id="total">0</div><div class="bottom">URLs in uploaded CSV</div></div><div class="panel stat"><div class="label">Working pages</div><div class="value green" id="working">0</div><div class="bottom">HTTP 2xx responses</div></div><div class="panel stat"><div class="label">Not found</div><div class="value red" id="missing">0</div><div class="bottom">HTTP 404 and 410</div></div><div class="panel stat"><div class="label">Needs review</div><div class="value gold" id="review">0</div><div class="bottom">429, 403, 5xx, timeouts, etc.</div></div></section>
+<section class="panel progress-panel" aria-label="Scan progress"><div class="progress-top"><strong id="progress-title">Ready for your first scan</strong><span id="percent">0%</span></div><div class="progress-track"><div class="progress-fill" id="bar"></div></div><div class="meta"><span id="progress-copy">Upload a CSV file to get started.</span><span id="scan-name">No file selected</span></div></section>
+<section class="panel results"><div class="section-title"><h2>URL results</h2><span class="step" id="result-count">0 checked</span></div><div class="toolbar"><div class="filters" role="group" aria-label="Filter results"><button class="filter active" data-category="all">All</button><button class="filter" data-category="working">Working</button><button class="filter" data-category="not_found">Not found</button><button class="filter" data-category="needs_review">Needs review</button></div><input id="search" class="search" type="search" placeholder="Search URLs or status codes…" aria-label="Search URLs or status codes"></div><div class="table-wrap"><table><thead><tr><th>PAGE URL</th><th>HTTP STATUS</th><th>RESULT</th><th>FINAL URL / DETAIL</th></tr></thead><tbody id="tbody"><tr><td colspan="4" class="empty">Your scanned URLs will appear here.</td></tr></tbody></table></div><div class="table-note" id="table-note">The complete report will be available as a CSV download.</div></section>
+<section class="panel download"><div class="section-title"><h2>Export reports</h2><span class="step">03 / DOWNLOAD</span></div><p class="description" style="font-size:13px">Get separate CSV files with all URLs, working pages, missing pages and URLs that need a closer look.</p><div class="btn-row"><button class="btn outline" data-export="all_results" disabled>↓ All results</button><button class="btn outline" data-export="working" disabled>↓ Working URLs</button><button class="btn outline" data-export="not_found" disabled>↓ 404 / 410 URLs</button><button class="btn outline" data-export="needs_review" disabled>↓ Needs review</button></div><div class="download-note" id="download-note">Reports become available when the scan is complete.</div></section>
+<div class="footer">SEO Pulse runs on your computer only. No uploaded CSV is sent to a paid service. URL checks still send HTTP requests to the websites you scan.</div>
+</div>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const fmt = new Intl.NumberFormat('en-US');
+const state = {file:null, isReport:false, canRetry:false, job:'idle', category:'all', term:'', tick:null, request:0};
+function error(message){const element=$('alert');element.textContent=message;element.classList.toggle('show',!!message)}
+function banner(message){const element=$('banner');element.textContent=message;element.classList.toggle('show',!!message)}
+function buttons(){
+  const busy=state.job==='running';
+  $('start').disabled=busy||!state.file||state.isReport;
+  $('start').textContent=busy?'Scan in progress…':state.isReport?'Use Retry below for this report':'Start checking URLs →';
+  $('retry').disabled=busy||(!state.isReport&&!state.canRetry);
+  $('retry').textContent=busy?'Checking…':'↻ Retry Needs Review';
+  $('retry-note').textContent=state.isReport?'Previous results detected. Click Retry to check ONLY its Needs Review rows.':state.canRetry?'Retry unresolved URLs from the latest completed scan.':'Select a previous all_results.csv, or complete a scan with Needs Review URLs.';
+}
+async function setFile(file){
+  if(!file)return;
+  if(!file.name.toLowerCase().endsWith('.csv')){error('Please select a CSV file (.csv).');return;}
+  if(file.size>2*1024*1024){error('File too large. Use a CSV smaller than 2 MB.');return;}
+  state.file=file;state.isReport=false;error('');banner('');
+  $('filename').textContent=file.name;
+  $('drop-title').textContent='File ready to scan';
+  $('drop-subtitle').textContent=(file.size/1024).toFixed(1)+' KB · Click to change file';
+  $('scan-name').textContent=file.name;buttons();
+  try{
+    const firstLine=(await file.slice(0,700).text()).replace(/^\ufeff/,'').split(/\r?\n/,1)[0].replace(/"/g,'').toLowerCase();
+    if(state.file!==file)return;
+    const headers=firstLine.split(',').map(value=>value.trim());
+    state.isReport=['url','result','http_status','final_url','details'].every(field=>headers.includes(field));
+    buttons();
+  }catch(e){error('Could not read CSV: '+e.message)}
+}
+$('csvfile').addEventListener('change',e=>setFile(e.target.files[0]));
+$('drop').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('csvfile').click()}});
+['dragenter','dragover'].forEach(event=>$('drop').addEventListener(event,e=>{e.preventDefault();$('drop').classList.add('drag')}));
+['dragleave','drop'].forEach(event=>$('drop').addEventListener(event,e=>{e.preventDefault();$('drop').classList.remove('drag')}));
+$('drop').addEventListener('drop',e=>setFile(e.dataTransfer.files[0]));
+async function jsonRequest(url,options){
+  const res=await fetch(url,options);let data;
+  try{data=await res.json()}catch{throw Error('The server returned an unexpected response.')}
+  if(!res.ok)throw Error(data.error||'Request failed.');return data;
+}
+function prepareRun(){
+  state.job='running';state.category='all';state.term='';$('search').value='';state.canRetry=false;
+  document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.category==='all'));
+  document.querySelectorAll('[data-export]').forEach(b=>b.disabled=true);
+  $('download-note').textContent='Checking URLs. Reports are available after completion.';
+  error('');banner('');buttons();
+}
+async function startRun(endpoint,payload){
+  if(state.job==='running')return;
+  error('');
+  // Keep existing reports visible if request validation fails.
+  try{
+    const outcome=await jsonRequest(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    prepareRun();await poll();startPolling();
+    return outcome;
+  }catch(e){error(e.message);buttons()}
+}
+$('start').addEventListener('click',async()=>{
+  if(!state.file||state.isReport||state.job==='running')return;
+  try{await startRun('/api/start',{filename:state.file.name,csv:await state.file.text()})}
+  catch(e){error('Could not read your CSV: '+e.message)}
+});
+$('retry').addEventListener('click',async()=>{
+  if(state.job==='running')return;
+  try{
+    const payload=state.isReport&&state.file?{filename:state.file.name,csv:await state.file.text()}:{};
+    await startRun('/api/retry',payload);
+  }catch(e){error('Could not read your report: '+e.message)}
+});
+function startPolling(){if(state.tick)clearInterval(state.tick);state.tick=setInterval(poll,900)}
+async function poll(){
+ try{
+  const s=await jsonRequest('/api/status');state.job=s.state;
+  const total=s.total||0, target=s.target_total||total, completed=s.completed||0;
+  const pct=target?Math.round(completed/target*100):0;
+  $('total').textContent=fmt.format(total);$('working').textContent=fmt.format(s.counts.working);
+  $('missing').textContent=fmt.format(s.counts.not_found);$('review').textContent=fmt.format(s.counts.needs_review);
+  $('percent').textContent=pct+'%';$('bar').style.width=pct+'%';
+  $('result-count').textContent=s.mode==='retry'?fmt.format(completed)+' retried / processed':fmt.format(completed)+' checked';
+  if(s.name)$('scan-name').textContent=s.name;
+  const ready=s.state==='done',retry=s.mode==='retry';
+  $('progress-title').textContent=s.state==='running'?(retry?'Retrying unresolved URLs safely…':'Scanning your URLs…'):
+    ready?(retry?'Retry complete ✓':'Scan complete ✓'):s.state==='failed'?'Scan failed':'Ready for your first scan';
+  $('progress-copy').textContent=s.state==='running'?(retry?fmt.format(completed)+' / '+fmt.format(target)+' review URLs processed · '+fmt.format(s.attempted)+' requested · '+fmt.format(s.skipped)+' skipped by rate limit':fmt.format(completed)+' of '+fmt.format(target)+' URLs checked'):
+    ready?(retry?fmt.format(s.attempted)+' URLs requested; '+fmt.format(s.skipped)+' skipped due to rate limits. Updated full report ready.':fmt.format(total)+' URLs checked. Your reports are ready.'):
+    s.state==='failed'?'Check the error and try again.':'Upload a CSV file to get started.';
+  document.querySelectorAll('[data-export]').forEach(b=>b.disabled=!ready);
+  if(ready)$('download-note').textContent='Updated CSV reports are ready to download. Previous scans remain saved locally.';
+  if(s.state==='failed')error(s.error||'Scan failed.');
+  if(ready&&s.notice)banner(s.notice);
+  state.canRetry=ready&&s.counts.needs_review>0;
+  buttons();
+  if(s.state==='running'||ready)await showResults(s);
+  if(s.state!=='running'&&state.tick){clearInterval(state.tick);state.tick=null}
+ }catch(e){error('Cannot connect to local dashboard: '+e.message);if(state.tick){clearInterval(state.tick);state.tick=null}state.job='idle';buttons()}
+}
+function makeCell(text,cls=''){const cell=document.createElement('td');cell.textContent=text==null?'':String(text);if(cls)cell.className=cls;return cell;}
+function drawRows(rows,count,live){
+  const body=$('tbody');body.replaceChildren();
+  if(!rows.length){const tr=document.createElement('tr');const td=makeCell(live?'Checking URLs — results will appear here.':'No URLs match this filter.','empty');td.colSpan=4;tr.append(td);body.append(tr)}
+  for(const r of rows){
+    const tr=document.createElement('tr');const link=document.createElement('a');link.textContent=r.url;
+    if(/^(https?:\/\/|www\.)/i.test(r.url)){link.href=r.url.startsWith('www.')?'https://'+r.url:r.url;link.target='_blank';link.rel='noopener noreferrer'}
+    const cell=makeCell('','url');cell.append(link);const status=makeCell(r.http_status||'—','status');const result=makeCell('');
+    const chip=document.createElement('span');chip.className='status-chip '+r.result;
+    chip.textContent=r.result==='working'?'Working':r.result==='not_found'?'Not found':'Needs review';result.append(chip);
+    const extra=r.details?(r.final_url?r.final_url+' · '+r.details:r.details):(r.final_url||'—');
+    tr.append(cell,status,result,makeCell(extra,'final'));body.append(tr);
+  }
+  $('table-note').textContent=live?'Showing recent results while checking. The full report is available after completion.':'Showing '+fmt.format(rows.length)+' of '+fmt.format(count)+' matching URLs (max 200 on screen). Download the complete CSV above.';
+}
+async function showResults(s){
+  if(s.state==='running'){
+    const filtered=(s.recent||[]).filter(r=>(state.category==='all'||r.result===state.category)&&(!state.term||r.url.toLowerCase().includes(state.term)||String(r.http_status).includes(state.term)));
+    drawRows(filtered,filtered.length,true);return;
+  }
+  const request=++state.request;
+  const data=await jsonRequest('/api/results?category='+encodeURIComponent(state.category)+'&search='+encodeURIComponent(state.term));
+  if(request!==state.request)return;drawRows(data.rows,data.matching,false);
+}
+function refreshResults(){jsonRequest('/api/status').then(showResults).catch(e=>error(e.message))}
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{state.category=button.dataset.category;document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b===button));refreshResults()}));
+let searchDelay;$('search').addEventListener('input',e=>{state.term=e.target.value.trim().toLowerCase();clearTimeout(searchDelay);searchDelay=setTimeout(refreshResults,250)});
+document.querySelectorAll('[data-export]').forEach(b=>b.addEventListener('click',()=>{window.location.href='/api/download/'+encodeURIComponent(b.dataset.export)}));
+poll();
+</script>
+</body></html>
